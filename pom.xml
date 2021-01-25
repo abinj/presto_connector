@@ -78,14 +78,14 @@
     </build>
 
     <properties>
-        <dropwizard.version>2.0.18</dropwizard.version>
+        <presto.version>0.245.1</presto.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>io.dropwizard</groupId>
-            <artifactId>dropwizard-core</artifactId>
-            <version>${dropwizard.version}</version>
+            <groupId>com.facebook.presto</groupId>
+            <artifactId>presto-jdbc</artifactId>
+            <version>${presto.version}</version>
         </dependency>
     </dependencies>
 
