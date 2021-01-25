@@ -79,6 +79,7 @@
 
     <properties>
         <presto.version>0.245.1</presto.version>
+        <snakeyaml.version>1.27</snakeyaml.version>
     </properties>
 
     <dependencies>
@@ -87,6 +88,12 @@
             <artifactId>presto-jdbc</artifactId>
             <version>${presto.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>${snakeyaml.version}</version>
+        </dependency>
+
     </dependencies>
 
 

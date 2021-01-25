@@ -1,8 +1,32 @@
 package com.sightline.prestoapp.application;
 
+import com.sightline.prestoapp.configuration.PrestoAppConfiguration;
+import org.yaml.snakeyaml.Yaml;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
 public class MainApplication {
 
     public static void main(String[] args) throws Exception {
-        //to-do
+        Yaml yaml = new Yaml();
+        String yaml_path = "config.yaml";
+
+        if (args != null && args.length != 0) {
+            for (int i=0; i< args.length; i++) {
+                if (args[i].equals("--config") || args[i].equals("-c")) {
+                    yaml_path = args.length > i+1 ? args[i + 1]: "";
+                }
+            }
+        }
+
+        try {
+            InputStream fileInputStream = new FileInputStream(yaml_path);
+            PrestoAppConfiguration config = yaml.loadAs(fileInputStream, PrestoAppConfiguration.class);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
