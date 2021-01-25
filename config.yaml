@@ -1,0 +1,8 @@
+
+PrestoClient:
+  user: abin
+  password: 1234
+  SSL: True
+  host: localhost
+  port: 8080
+

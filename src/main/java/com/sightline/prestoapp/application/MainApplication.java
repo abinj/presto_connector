@@ -1,5 +1,7 @@
 package com.sightline.prestoapp.application;
 
+import com.facebook.presto.jdbc.internal.okhttp3.Connection;
+import com.sightline.prestoapp.client.PrestoSQLClient;
 import com.sightline.prestoapp.configuration.PrestoAppConfiguration;
 import org.yaml.snakeyaml.Yaml;
 
@@ -24,7 +26,9 @@ public class MainApplication {
         try {
             InputStream fileInputStream = new FileInputStream(yaml_path);
             PrestoAppConfiguration config = yaml.loadAs(fileInputStream, PrestoAppConfiguration.class);
-
+            PrestoSQLClient prestoSQLClient= new PrestoSQLClient(config);
+            // Establish presto jdbc connection
+            Connection prestoConnection = prestoSQLClient.getPrestoConnection();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
