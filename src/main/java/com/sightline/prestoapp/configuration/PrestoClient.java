@@ -6,9 +6,27 @@ public class PrestoClient {
     private static String SSL;
     private static String host;
     private static String port;
+    private static String DBName;
+    private static String catalog;
 
     public static String getUser() {
         return user;
+    }
+
+    public static String getDBName() {
+        return DBName;
+    }
+
+    public static String getCatalog() {
+        return catalog;
+    }
+
+    public void setCatalog(String catalog) {
+        PrestoClient.catalog = catalog;
+    }
+
+    public void setDBName(String DBName) {
+        PrestoClient.DBName = DBName;
     }
 
     public void setUser(String user) {

@@ -1,8 +1,10 @@
 
-PrestoClient:
-  user: abin
-  password: 1234
-  SSL: True
+prestoClient:
+  user: presto
+  password: Presto123@
+  SSL: False
   host: localhost
-  port: 8080
+  port: 8090
+  DBName: flights
+  catalog: mysql
 
