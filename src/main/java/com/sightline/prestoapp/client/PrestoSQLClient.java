@@ -27,7 +27,6 @@ public class PrestoSQLClient {
 //            properties.setProperty("SSL", config.getPrestoClient().getSSL());
 
                     try {
-
                         connection = (PrestoConnection) DriverManager.getConnection(base_url, properties);
                     } catch (SQLException e) {
                         e.printStackTrace();
